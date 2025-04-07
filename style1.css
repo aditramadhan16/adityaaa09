@@ -251,9 +251,9 @@ span{
 .about-img img{
     position: relative;
     height: 40vw;
-    width: 40vw;
+    width: 35vw;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 10%;
     transition: 0.4s ease-in-out;
     top: 1rem;
     box-shadow: 0 0 30px var(--main-color)
@@ -567,8 +567,8 @@ span{
         margin: 0 2rem 4rem;
     }
     .about img{
-        width: 50vw;
-        height: 50vw;
+        width: 80vw;
+        height: 80vw;
         margin-top: 1rem;
         margin-bottom: 3rem;
     }

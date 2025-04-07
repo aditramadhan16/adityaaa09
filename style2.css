@@ -73,12 +73,12 @@ li:hover {
 }
 
 .img-h1 {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     justify-content: center;
     display: flex;
     align-items: center;
 }
 .color-blue {
-    color: blue
+    color: rgb(0, 0, 255)
 }
