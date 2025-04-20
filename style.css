@@ -1,214 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+* {
+    font-family: "poppins", sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
-body{
-    background: url(img.jpg) no-repeat;
+
+#bg-video {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+}
+
+section {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
-    background-size: cover;
+    width: 100%;
     background-position: center;
+    background-size: cover;
 }
 
-.container{
-    background: transparent;
-    color: white;
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgb(255, 255, 255);
+.box {
     position: relative;
-    backdrop-filter: blur(20px);
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
-}
-
-.container p{
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-    margin: 20px 0;
-}
-
-.container span{
-    font-size: 12px;
-}
-
-.container a{
-    color: #ffffff;
-    font-size: 13px;
-    text-decoration: none;
-    margin: 15px 0 10px;
-}
-
-.container button{
-    background-color: #512da8;
-    background: linear-gradient(to right, rgb(44, 20, 24), rgb(37, 31, 31));
-    color: #ffffff;
-    font-size: 12px;
-    padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.container button.hidden{
-    background-color: transparent;
-}
-
-.container form{
-    background: transparent;
+    width: 350px;
+    height: 400px;
     display: flex;
-    align-items: center;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.663);
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
     justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    height: 100%;
+    align-items: center;
+    display: flex;
 }
 
-.container input{
+h2 {
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+
+.input-field {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid white;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translate(-50);
     color: white;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~label,
+input:valid ~ label {
+    top: -5px;
+}
+
+.input-field input {
+    width: 100%;
+    height: 50px;
     background: transparent;
     border: none;
-    margin: 8px 0;
-    border: 2px solid rgba(255, 255, 255, 0.315);
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 40px;
-    width: 100%;
     outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: rgb(255, 255, 255);
 }
 
-.form-container{
+.input-field ion-icon {
     position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
+    right: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    top: 20px;
 }
 
-.sign-in{
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.container.active .sign-in{
-    transform: translateX(100%);
-}
-
-.sign-up{
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.container.active .sign-up{
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: move 0.6s;
-}
-
-@keyframes move{
-    0%, 49.99%{
-        opacity: 0;
-        z-index: 1;
-    }
-    50%, 100%{
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.social-icons{
-    margin: 20px 0;
-}
-
-.social-icons a{
-    border: 1px solid #ccc;
-    border-radius: 20%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
-}
-
-.toggle-container{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: all 0.6s ease-in-out;
-    border-radius: 150px 0 0 100px;
-    z-index: 1000;
-}
-
-.container.active .toggle-container{
-    transform: translateX(-100%);
-    border-radius: 0 150px 100px 0;
-}
-
-.toggle{
-    background-color: white;
-    height: 100%;
-    background: linear-gradient(to right, white, gray);
-    color: #000000;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
-
-.container.active .toggle{
-    transform: translateX(50%);
-}
-
-.toggle-panel{
-    position: absolute;
-    width: 50%;
-    height: 100%;
+.forget {
+    margin: -15px 0 15px;
+    font-size: small;
+    color: rgb(255, 255, 255);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 30px;
+    justify-content: left;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget label a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+button:hover {
+    box-shadow: 1px 5px 7px 1px rgba(27, 26, 22, 0.966); 
+}
+
+
+.register {
+    font-size: .9em;
+    color: #ffffff;
     text-align: center;
-    top: 0;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
+    margin: 25px 0 10px;
 }
 
-.toggle-left{
-    transform: translateX(-200%);
+
+
+.register p a {
+    text-decoration: none;
+    color: #000000;
 }
 
-.container.active .toggle-left{
-    transform: translateX(0);
-}
-
-.toggle-right{
-    right: 0;
-    transform: translateX(0);
-}
-
-.container.active .toggle-right{
-    transform: translateX(200%);
+.register p a:hover {
+    text-decoration: underline;
+    
 }

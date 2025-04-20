@@ -12,7 +12,7 @@
     --bg-color: #000000;
     --second-bg-color: #111111cb;
     --text-color: rgb(255, 255, 255);
-    --main-color: #858080;
+    --main-color: gray;
 }
 html{
     font-size: 62.5%;
@@ -568,7 +568,7 @@ span{
     }
     .about img{
         width: 80vw;
-        height: 80vw;
+        height: 100vw;
         margin-top: 1rem;
         margin-bottom: 3rem;
     }
